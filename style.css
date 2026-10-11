@@ -1,0 +1,80 @@
+/* Single dark look: the game commits to one visual world. */
+:root {
+  color-scheme: dark;
+  --bg: #050304;
+  --fg: #d8cfc0;
+  --btn: rgba(40, 28, 24, 0.62);
+  --btn-press: rgba(140, 50, 36, 0.75);
+  --btn-edge: rgba(150, 128, 104, 0.55);
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+#app {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  box-sizing: border-box;
+}
+#screen {
+  display: block;
+  background: #000;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  touch-action: none;
+}
+#pad {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: env(safe-area-inset-bottom, 0px);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 16px 16px;
+  pointer-events: none;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+#pad[hidden] { display: none; }
+#dpad {
+  display: grid;
+  grid-template-columns: repeat(3, 52px);
+  grid-template-rows: repeat(3, 52px);
+  pointer-events: auto;
+}
+#btns {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  pointer-events: auto;
+}
+#pad button {
+  font: 600 15px Georgia, serif;
+  color: var(--fg);
+  background: var(--btn);
+  border: 1px solid var(--btn-edge);
+  border-radius: 10px;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
+#pad button:active { background: var(--btn-press); }
+#pad button:focus-visible { outline: 2px solid #e0b060; outline-offset: 2px; }
+.d { width: 52px; height: 52px; font-size: 18px; }
+.up { grid-column: 2; grid-row: 1; }
+.left { grid-column: 1; grid-row: 2; }
+.right { grid-column: 3; grid-row: 2; }
+.down { grid-column: 2; grid-row: 3; }
+.b { width: 64px; height: 64px; border-radius: 50% !important; }
+.b.big { width: 78px; height: 78px; }
+.b.small { width: 52px; height: 52px; font-size: 13px; }

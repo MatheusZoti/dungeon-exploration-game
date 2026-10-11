@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Beneath Tristram</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Pirata+One&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+  <canvas id="screen" width="960" height="720" aria-label="Beneath Tristram game screen"></canvas>
+  <div id="pad" hidden>
+    <div id="dpad">
+      <button type="button" class="d up" data-k="up" aria-label="Up">▲</button>
+      <button type="button" class="d left" data-k="left" aria-label="Left">◀</button>
+      <button type="button" class="d right" data-k="right" aria-label="Right">▶</button>
+      <button type="button" class="d down" data-k="down" aria-label="Down">▼</button>
+    </div>
+    <div id="btns">
+      <button type="button" class="b small" data-k="map">Map</button>
+      <button type="button" class="b" data-k="cancel">Menu</button>
+      <button type="button" class="b big" data-k="ok">Act</button>
+    </div>
+  </div>
+</main>
+<script src="src/core.js"></script>
+<script src="src/gfx.js"></script>
+<script src="src/art.js"></script>
+<script src="src/objects.js"></script>
+<script src="src/monsters.js"></script>
+<script src="src/items.js"></script>
+<script src="src/lore.js"></script>
+<script src="src/mapgen.js"></script>
+<script src="src/light.js"></script>
+<script src="src/audio.js"></script>
+<script src="src/ui.js"></script>
+<script src="src/player.js"></script>
+<script src="src/world.js"></script>
+<script src="src/combat.js"></script>
+<script src="src/menu.js"></script>
+<script src="src/save.js"></script>
+<script src="src/scenes.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>
